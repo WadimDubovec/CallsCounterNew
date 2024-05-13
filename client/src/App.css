@@ -1,0 +1,87 @@
+.html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FAACA8;
+    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
+
+}
+.content {
+    display: flex; /* Добавляем flex-контейнер для содержимого */
+    flex-direction: column; /* Столбцовая ориентация для содержимого */
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
+    border-radius:30px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.2); /* Прозрачный белый фон для контента */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37), 0 0 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px); /* Добавление размытия для прозрачного белого стекла */
+}
+.content h2 {
+    font-size: 40px;
+    color: #fff;
+}
+.content h1 {
+    font-size: 100px;
+    color: #fff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.column {
+    width: 280px;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    margin:5px;
+}
+
+.btn-minus, .btn-plus, .btn-zero, .btn-escalation {
+    color: white;
+    border: none;
+    margin: 5px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-minus {
+    background-image: linear-gradient(135deg, #D56D8C 0%, #6E54A3 100%);
+}
+.btn-plus {
+    background-image: linear-gradient(135deg, #D56D8C 0%, #6E54A3 100%);
+;
+    
+}
+.btn-zero {
+    background-image: linear-gradient(135deg, #D56D8C 0%, #6E54A3 100%);
+    padding: 15px 65px !important;
+}
+.btn-escalation {
+    background-image: linear-gradient(135deg, #D56D8C 0%, #6E54A3 100%);
+    padding: 15px 65px !important;
+}
+.btn-minus:hover, .btn-plus:hover, .btn-zero:hover, .btn-escalation:hover {
+    filter: brightness(1.2); /* Увеличение яркости при наведении */
+}
+.btn-minus:active, .btn-plus:active, .btn-zero:active, .btn-escalation:active {
+    transform: scale(0.95); /* Уменьшение размера при нажатии */
+}
+.btn-minus:disabled {
+    background-color: #ccc;
+    color: #bdbdbd;
+    cursor: not-allowed;
+}
+

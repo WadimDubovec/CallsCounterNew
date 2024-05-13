@@ -1,0 +1,19 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-left: 2px solid #000;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar p {
+    margin-top: 5px;
+    font-size: 18px;
+}

@@ -9,7 +9,6 @@ function App() {
     const [numberOfEscalations, setNumberOfEscalation] = useState(0);
     const percentageEscalations = numberOfCalls !== 0 ? (numberOfEscalations / numberOfCalls) * 100 : 0;
 
-
     return (
         <div className="App">
             <Content

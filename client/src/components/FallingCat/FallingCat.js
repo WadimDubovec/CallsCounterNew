@@ -19,7 +19,7 @@ function FallingCat({ id }) {
         const removeTimer = setTimeout(() => {
             setShouldBeRemoved(true);
             console.log("Пропал")
-        }, 10000);
+        }, 13000);
 
         setFallingInterval(interval); // Сохраняем интервал в переменной
 

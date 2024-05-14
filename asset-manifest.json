@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/CallsCounterNew/static/css/main.840b5ea8.css",
-    "main.js": "/CallsCounterNew/static/js/main.a328ad68.js",
+    "main.css": "/CallsCounterNew/static/css/main.405092cc.css",
+    "main.js": "/CallsCounterNew/static/js/main.80825243.js",
     "index.html": "/CallsCounterNew/index.html",
-    "main.840b5ea8.css.map": "/CallsCounterNew/static/css/main.840b5ea8.css.map",
-    "main.a328ad68.js.map": "/CallsCounterNew/static/js/main.a328ad68.js.map"
+    "main.405092cc.css.map": "/CallsCounterNew/static/css/main.405092cc.css.map",
+    "main.80825243.js.map": "/CallsCounterNew/static/js/main.80825243.js.map"
   },
   "entrypoints": [
-    "static/css/main.840b5ea8.css",
-    "static/js/main.a328ad68.js"
+    "static/css/main.405092cc.css",
+    "static/js/main.80825243.js"
   ]
 }

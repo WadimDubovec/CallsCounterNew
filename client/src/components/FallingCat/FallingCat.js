@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./FallingCat.css";
+import {logDOM} from "@testing-library/react";
 
 function FallingCat({ id }) {
     const [top, setTop] = useState(-100);
@@ -7,6 +8,7 @@ function FallingCat({ id }) {
     const [emoji] = useState(getRandomEmoji());
     const [shouldBeRemoved, setShouldBeRemoved] = useState(false); // Состояние для отслеживания необходимости удаления смайлика
     const [fallingInterval, setFallingInterval] = useState(null); // Объявляем переменную fallingInterval
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -16,7 +18,8 @@ function FallingCat({ id }) {
         // Устанавливаем таймер для удаления смайлика через 13 секунд
         const removeTimer = setTimeout(() => {
             setShouldBeRemoved(true);
-        }, 14000);
+            console.log("Пропал")
+        }, 10000);
 
         setFallingInterval(interval); // Сохраняем интервал в переменной
 
@@ -25,26 +28,12 @@ function FallingCat({ id }) {
             clearTimeout(removeTimer); // Очищаем таймер при размонтировании компонента
         };
     }, []);
-    useEffect(() => {
-        function handleResize() {
-            if (top >= window.innerHeight) {
-                // Если смайлик достиг нижнего края окна, можно удалить его
-                clearInterval(fallingInterval);
-            }
-        }
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, [top, fallingInterval]);
-    useEffect(() => {
-        // Если shouldBeRemoved становится true, удаляем смайлик
-        if (shouldBeRemoved) {
-            clearInterval(fallingInterval);
-        }
-    }, [shouldBeRemoved, fallingInterval]);
+    // useEffect(() => {
+    //     // Если shouldBeRemoved становится true, удаляем смайлик
+    //     if (shouldBeRemoved) {
+    //         clearInterval(fallingInterval);
+    //     }
+    // }, [shouldBeRemoved, fallingInterval]);
 
     function getRandomEmoji() {
         let emojis = ["🐱", "😺", "😸", "😼", "😽", "🙀", "😿", "😾","🐈", "🐈‍⬛", "😍","🥰","😘", "💋","😻","🩷","❤️","🧡","💛","💜","💙","🤍","🤎","🩶","🩵","💚","🖤", "❤️‍","❣️","💗","💓","💝","💘","💞","💕","💖"];

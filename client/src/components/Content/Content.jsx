@@ -1,7 +1,7 @@
 import React from 'react';
 import MyButton from "../Button/MyButton";
 
-function Content({numberOfCalls, setNumberOfCalls, setNumberOfEscalation }) {
+function Content({numberOfCalls, numberOfEscalations, setNumberOfCalls, setNumberOfEscalation }) {
     return (
         <div className = "content" >
             <h2 className = "countCalls" >Количество звонков</h2 >
@@ -22,13 +22,19 @@ function Content({numberOfCalls, setNumberOfCalls, setNumberOfEscalation }) {
                     </MyButton >
                 </div >
             <div className = "column" >
+                <MyButton
+                    onClick = {() => {setNumberOfEscalation(prevCount => prevCount - 1)}}
+                    className = "btn-escalation"
+                    disabled={numberOfEscalations === 0}
+                >
+                    -Эскалация
+                </MyButton >
                 <MyButton onClick = {
                     () => {
                         setNumberOfEscalation(prevCount => prevCount + 1)
-                        setNumberOfCalls(prevCount => prevCount + 1)
                     }}
                           className = "btn-escalation" >
-                    Эскалация
+                    Эскалация+
                 </MyButton >
             </div >
             <div className = "column" >

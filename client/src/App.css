@@ -1,6 +1,7 @@
 .html, body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .App {
@@ -71,7 +72,9 @@ body {
 }
 .btn-escalation {
     background-image: linear-gradient(135deg, #D56D8C 0%, #6E54A3 100%);
-    padding: 15px 65px !important;
+    padding: 15px !important;
+    font-size: 17px;
+    
 }
 .btn-minus:hover, .btn-plus:hover, .btn-zero:hover, .btn-escalation:hover {
     filter: brightness(1.2); /* Увеличение яркости при наведении */
@@ -79,7 +82,7 @@ body {
 .btn-minus:active, .btn-plus:active, .btn-zero:active, .btn-escalation:active {
     transform: scale(0.95); /* Уменьшение размера при нажатии */
 }
-.btn-minus:disabled {
+.btn-minus:disabled, .btn-escalation:disabled {
     background-color: #ccc;
     color: #bdbdbd;
     cursor: not-allowed;

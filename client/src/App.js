@@ -13,6 +13,7 @@ function App() {
         <div className="App">
             <Content
                 numberOfCalls = {numberOfCalls}
+                numberOfEscalations = {numberOfEscalations}
                 setNumberOfCalls={setNumberOfCalls}
                 setNumberOfEscalation={setNumberOfEscalation}
             />

@@ -17,7 +17,7 @@ function Content({numberOfCalls, numberOfEscalations, setNumberOfCalls, setNumbe
                     <MyButton
                         onClick = {() => {
                             setNumberOfCalls(prevCount => prevCount + 1)
-                            setRandomCountEmojis(prevCount => prevCount + Math.floor(Math.random() * 10) + 10);
+                            setRandomCountEmojis(prevCount => prevCount + Math.floor(Math.random() * 6) + 4);
                         }}
                         className = "btn-plus"
                     >

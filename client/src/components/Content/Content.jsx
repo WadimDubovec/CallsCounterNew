@@ -6,6 +6,7 @@ function Content({numberOfCalls, numberOfEscalations, setNumberOfCalls, setNumbe
         <div className = "content" >
             <h2 className = "countCalls" >Количество звонков</h2 >
             <h1 >{numberOfCalls}</h1 >
+            
             <div className = "column" >
                     <MyButton
                         onClick = {() => setNumberOfCalls(prevCount => prevCount - 1)}

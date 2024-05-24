@@ -35,7 +35,9 @@ function Content({numberOfCalls, numberOfEscalations, setNumberOfCalls, setNumbe
                 </MyButton >
                 <MyButton onClick = {
                     () => {
+                        setNumberOfCalls(prevCount => prevCount + 1)
                         setNumberOfEscalation(prevCount => prevCount + 1)
+                        setRandomCountEmojis(prevCount => prevCount + Math.floor(Math.random() * 5) + 5);
                     }}
                           className = "btn-escalation" >
                     Эскалация+
@@ -53,6 +55,7 @@ function Content({numberOfCalls, numberOfEscalations, setNumberOfCalls, setNumbe
                     Сбросить
                 </MyButton >
             </div >
+            
         </div >
     );
 }

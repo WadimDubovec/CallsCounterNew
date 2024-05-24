@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./FallingCat.css";
 
-// Импорт всех .svg файлов из папки src/img/SVG
+// Импорт всех .svg файлов из папки assets/svgs
 const importAll = (r) => r.keys().map(r);
 const svgs = importAll(require.context('../../img/SVG', false, /\.svg$/));
 
 function FallingCat({ id }) {
     const [top, setTop] = useState(-100);
-    const [left] = useState(Math.random() * window.innerWidth); // `setLeft` удален, так как не используется
+    const [left, setLeft] = useState(Math.random() * window.innerWidth);
     const [randomSvg] = useState(getRandomSvg());
     const [shouldBeRemoved, setShouldBeRemoved] = useState(false);
+    const [fallingInterval, setFallingInterval] = useState(null);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -18,7 +19,10 @@ function FallingCat({ id }) {
 
         const removeTimer = setTimeout(() => {
             setShouldBeRemoved(true);
+            console.log("Пропал");
         }, 13000);
+
+        setFallingInterval(interval);
 
         return () => {
             clearInterval(interval);

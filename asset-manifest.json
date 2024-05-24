@@ -1,13 +1,34 @@
 {
   "files": {
-    "main.css": "/CallsCounterNew/static/css/main.405092cc.css",
-    "main.js": "/CallsCounterNew/static/js/main.fffbe049.js",
+    "main.css": "/CallsCounterNew/static/css/main.14ebd562.css",
+    "main.js": "/CallsCounterNew/static/js/main.9e850f5c.js",
+    "static/media/Octopus.svg": "/CallsCounterNew/static/media/Octopus.1dc63a9301d76c4e13c2.svg",
+    "static/media/Heart On Fire.svg": "/CallsCounterNew/static/media/Heart On Fire.a59298c4041ad750d409.svg",
+    "static/media/Growing Heart.svg": "/CallsCounterNew/static/media/Growing Heart.f839fd49d7bf7ec3ab6e.svg",
+    "static/media/Heart With Ribbon.svg": "/CallsCounterNew/static/media/Heart With Ribbon.45d67519affc39b2d934.svg",
+    "static/media/Red Heart.svg": "/CallsCounterNew/static/media/Red Heart.6070a0087d770cf61725.svg",
+    "static/media/Yellow Heart.svg": "/CallsCounterNew/static/media/Yellow Heart.075bba50fe3001113b0b.svg",
+    "static/media/Orange Heart.svg": "/CallsCounterNew/static/media/Orange Heart.df674c5da73e95532658.svg",
+    "static/media/Revolving Hearts.svg": "/CallsCounterNew/static/media/Revolving Hearts.26eaa12b2cda86319d33.svg",
+    "static/media/Sparkling Heart.svg": "/CallsCounterNew/static/media/Sparkling Heart.b53a6f68d84a8ac64bb6.svg",
+    "static/media/Green Heart.svg": "/CallsCounterNew/static/media/Green Heart.b7d9ea7037988f9c721d.svg",
+    "static/media/Purple Heart.svg": "/CallsCounterNew/static/media/Purple Heart.37f553bd14e4e2f47d30.svg",
+    "static/media/Mending Heart.svg": "/CallsCounterNew/static/media/Mending Heart.630055e73d4a6954541b.svg",
+    "static/media/Beating Heart.svg": "/CallsCounterNew/static/media/Beating Heart.26719205084e5e3e0c50.svg",
+    "static/media/Blue Heart.svg": "/CallsCounterNew/static/media/Blue Heart.eb5bba87a58bdc1b38bc.svg",
+    "static/media/Heart With Arrow.svg": "/CallsCounterNew/static/media/Heart With Arrow.353ccbf63485c571478e.svg",
+    "static/media/Two Hearts.svg": "/CallsCounterNew/static/media/Two Hearts.ea99bbde015aa06863ee.svg",
+    "static/media/Sun.svg": "/CallsCounterNew/static/media/Sun.8bd340038266f9b67a48.svg",
+    "static/media/Black Heart.svg": "/CallsCounterNew/static/media/Black Heart.7f9e5323c2d13eca4aa3.svg",
+    "static/media/Heart Exclamation.svg": "/CallsCounterNew/static/media/Heart Exclamation.6d0520215d4216fda7bf.svg",
+    "static/media/Brown Heart.svg": "/CallsCounterNew/static/media/Brown Heart.4ec66f42d68d3ba36e8d.svg",
+    "static/media/White Heart.svg": "/CallsCounterNew/static/media/White Heart.5f04952ecf10848bd84e.svg",
     "index.html": "/CallsCounterNew/index.html",
-    "main.405092cc.css.map": "/CallsCounterNew/static/css/main.405092cc.css.map",
-    "main.fffbe049.js.map": "/CallsCounterNew/static/js/main.fffbe049.js.map"
+    "main.14ebd562.css.map": "/CallsCounterNew/static/css/main.14ebd562.css.map",
+    "main.9e850f5c.js.map": "/CallsCounterNew/static/js/main.9e850f5c.js.map"
   },
   "entrypoints": [
-    "static/css/main.405092cc.css",
-    "static/js/main.fffbe049.js"
+    "static/css/main.14ebd562.css",
+    "static/js/main.9e850f5c.js"
   ]
 }

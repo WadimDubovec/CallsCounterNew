@@ -25,7 +25,11 @@ function Content({
                     onClick = {() => {
                         setNumberOfCalls(prevCount => Math.max(prevCount - 1, 0))
                         setDaySalary(prevCount => Math.max(prevCount - 0.58, 0))
+                        if (numberOfCallsGasEscalations === 1 && numberOfCalls === 1)  {
+                            setNumberOfCallsGasEscalations(prevCount => Math.max(prevCount-1, 0))
+                        }
                     }}
+
                     className = "btn-minus"
                     disabled = {numberOfCalls === 0}
                 >
@@ -112,7 +116,7 @@ function Content({
                 <MyButton
                     onClick = {() => {
                         setNumberOfCalls(prevCount => Math.max(prevCount + 1, 0));
-                        setNumberOfCallsGas(prevCount => Math.max(prevCount + 1, 0));
+                        // setNumberOfCallsGas(prevCount => Math.max(prevCount + 1, 0));
                         setNumberOfCallsGasEscalations(prevCount => Math.max(prevCount + 1, 0));
                         setRandomCountEmojis(prevCount => prevCount + Math.floor(Math.random() * 3) + 2);
                         setDaySalary(prevCount => Math.max(prevCount + 0.26, 0));

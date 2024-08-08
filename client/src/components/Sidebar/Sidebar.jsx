@@ -9,7 +9,7 @@ function Sidebar({ numberOfEscalations, numberOfEscalationsGas, percentageEscala
             <div >
                 <h3 >Количество эскалаций</h3 >
                 <p >{numberOfEscalations}</p >
-                <h3 >Процент эскалаций от общего количества звонков</h3 >
+                <h3 >Процент всех эскалаций от общего количества звонков</h3 >
                 <p >{percentageEscalations.toFixed(2)}%</p >
             </div >
 

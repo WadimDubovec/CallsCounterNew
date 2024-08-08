@@ -15,6 +15,7 @@ function App() {
             return 0;
         }
     });
+    
     const [numberOfEscalations, setNumberOfEscalation] = useState(() => {
         try {
             const savedEscalations = localStorage.getItem('numberOfEscalations');
@@ -25,6 +26,28 @@ function App() {
             return 0;
         }
     });
+    
+    const [numberOfCallsGas, setNumberOfCallsGas] = useState(() => {
+        try {
+            const savedCallsGas = localStorage.getItem('numberOfCallsGas');
+            console.log('Loaded numberOfCallsGas from localStorage:', savedCallsGas);
+            return savedCallsGas !== null ? JSON.parse(savedCallsGas) : 0;
+        } catch (error) {
+            console.error('Error loading numberOfCallsGas from localStorage:', error);
+            return 0;
+        }
+    })
+
+    const [numberOfCallsGasEscalations, setNumberOfCallsGasEscalations] = useState(() => {
+        try {
+            const savedGasEscalations = localStorage.getItem('numberOfCallsGasEscalations');
+            console.log('Loaded numberOfCallsGasEscalations from localStorage:', savedGasEscalations);
+            return savedGasEscalations !== null ? JSON.parse(savedGasEscalations) : 0;
+        } catch (error) {
+            console.error('Error loading numberOfCallsGasEscalations from localStorage:', error);
+            return 0;
+        }
+    })
     const [randomCountEmojis, setRandomCountEmojis] = useState(0);
     const [daySalary, setDaySalary] = useState(() => {
         try {
@@ -41,31 +64,43 @@ function App() {
         try {
             localStorage.setItem('numberOfCalls', JSON.stringify(numberOfCalls));
             localStorage.setItem('numberOfEscalations', JSON.stringify(numberOfEscalations));
+            localStorage.setItem('numberOfCallsGas', JSON.stringify(numberOfCallsGas))
+            localStorage.setItem('numberOfCallsGasEscalations', JSON.stringify(numberOfCallsGasEscalations))
             localStorage.setItem('daySalary', JSON.stringify(daySalary));
             console.log('Saved numberOfCalls, numberOfEscalations and daySalary to localStorage:', {
                 numberOfCalls,
                 numberOfEscalations,
+                numberOfCallsGas,
+                numberOfCallsGasEscalations,
                 daySalary
             });
         } catch (error) {
-            console.error('Error saving numberOfCalls and numberOfEscalations to localStorage:', error);
+            console.error('Error saving numberOfCalls, numberOfEscalations, numberOfCallsGas, numberOfCallsGasEscalations or daySalary to localStorage:', error);
         }
-    }, [numberOfCalls, numberOfEscalations, daySalary]);
-
+    }, [numberOfCalls, numberOfEscalations, numberOfCallsGas, numberOfCallsGasEscalations, daySalary]);
     const percentageEscalations = numberOfCalls !== 0 ? (numberOfEscalations / numberOfCalls) * 100 : 0;
 
     return (
         <div className="App">
             <Content
                 numberOfCalls={numberOfCalls}
-                numberOfEscalations={numberOfEscalations}
                 setNumberOfCalls={setNumberOfCalls}
+
+                numberOfEscalations={numberOfEscalations}
                 setNumberOfEscalation={setNumberOfEscalation}
+
+                numberOfCallsGas={numberOfCallsGas}
+                setNumberOfCallsGas={setNumberOfCallsGas}
+
+                numberOfCallsGasEscalations={numberOfCallsGasEscalations}
+                setNumberOfCallsGasEscalations={setNumberOfCallsGasEscalations}
+                
                 setRandomCountEmojis={setRandomCountEmojis}
                 setDaySalary = {setDaySalary}
             />
             <Sidebar
                 numberOfEscalations={numberOfEscalations}
+                numberOfEscalationsGas={numberOfCallsGasEscalations}
                 percentageEscalations={percentageEscalations}
                 numberOfCalls={numberOfCalls}
                 daySalary={daySalary}

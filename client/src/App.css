@@ -44,7 +44,7 @@ body {
     margin:5px;
 }
 
-.btn-minus, .btn-plus, .btn-zero, .btn-escalation {
+.btn-minus, .btn-plus, .btn-zero, .btn-escalation, .btn-gas, .btn-gas-escalation {
     color: white;
     border: none;
     margin: 5px;
@@ -74,15 +74,18 @@ body {
     background-image: linear-gradient(135deg, #D56D8C 0%, #6E54A3 100%);
     padding: 15px !important;
     font-size: 17px;
-    
 }
-.btn-minus:hover, .btn-plus:hover, .btn-zero:hover, .btn-escalation:hover {
+.btn-gas, .btn-gas-escalation {
+    background-image: linear-gradient(135deg, #D56D8C 0%, #6E54A3 100%);
+    font-size: 20px;
+}
+.btn-minus:hover, .btn-plus:hover, .btn-zero:hover, .btn-escalation:hover, .btn-gas:hover, .btn-gas-escalation:hover {
     filter: brightness(1.2); /* Увеличение яркости при наведении */
 }
-.btn-minus:active, .btn-plus:active, .btn-zero:active, .btn-escalation:active {
+.btn-minus:active, .btn-plus:active, .btn-zero:active, .btn-escalation:active, .btn-gas:active, .btn-gas-escalation:active {
     transform: scale(0.95); /* Уменьшение размера при нажатии */
 }
-.btn-minus:disabled, .btn-escalation:disabled {
+.btn-minus:disabled, .btn-escalation:disabled, .btn-gas:disabled, .btn-gas-escalation {
     background-color: #ccc;
     color: #bdbdbd;
     cursor: not-allowed;

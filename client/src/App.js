@@ -15,6 +15,16 @@ function App() {
             return 0;
         }
     });
+    const [numberOfTaxiDriversCalls, setNumberOfTaxiDriversCalls] = useState(() => {
+        try {
+            const savedTaxiDriversCalls = localStorage.getItem('numberOfTaxiDriversCalls');
+            console.log('Loaded numberOfTaxiDriversCalls from localStorage:', savedTaxiDriversCalls);
+            return savedTaxiDriversCalls !== null ? JSON.parse(savedTaxiDriversCalls) : 0;
+        } catch (error) {
+            console.error('Error loading numberOfTaxiDriversCalls from localStorage:', error);
+            return 0;
+        }
+    })
     const [numberOfEscalations, setNumberOfEscalation] = useState(() => {
         try {
             const savedEscalations = localStorage.getItem('numberOfEscalations');
@@ -60,6 +70,7 @@ function App() {
     useEffect(() => {
         try {
             localStorage.setItem('numberOfCalls', JSON.stringify(numberOfCalls));
+            localStorage.setItem('numberOfTaxiDriversCalls', JSON.stringify(numberOfTaxiDriversCalls));
             localStorage.setItem('numberOfEscalations', JSON.stringify(numberOfEscalations));
             localStorage.setItem('numberOfCallsGas', JSON.stringify(numberOfCallsGas))
             localStorage.setItem('numberOfCallsGasEscalations', JSON.stringify(numberOfCallsGasEscalations))
@@ -67,12 +78,13 @@ function App() {
             console.log('Saved numberOfCalls, numberOfEscalations and daySalary to localStorage:', {
                 numberOfCalls,
                 numberOfEscalations,
+                numberOfTaxiDriversCalls,
                 numberOfCallsGas,
                 numberOfCallsGasEscalations,
                 daySalary
             });
         } catch (error) {
-            console.error('Error saving numberOfCalls, numberOfEscalations, numberOfCallsGas, numberOfCallsGasEscalations or daySalary to localStorage:', error);
+            console.error('Error saving numberOfCalls, numberOfEscalations, numberOfCallsGas, numberOfCallsGasEscalations,numberOfTaxiDriversCalls or daySalary to localStorage:', error);
         }
     }, [numberOfCalls, numberOfEscalations, numberOfCallsGas, numberOfCallsGasEscalations, daySalary]);
     const percentageEscalations = numberOfCalls !== 0 ? ((numberOfEscalations+numberOfCallsGasEscalations) / numberOfCalls) * 100 : 0;
@@ -82,6 +94,9 @@ function App() {
             <Content
                 numberOfCalls={numberOfCalls}
                 setNumberOfCalls={setNumberOfCalls}
+
+                numberOfTaxiDriversCalls={numberOfTaxiDriversCalls}
+                setNumberOfTaxiDriversCalls={setNumberOfTaxiDriversCalls}
 
                 numberOfEscalations={numberOfEscalations}
                 setNumberOfEscalation={setNumberOfEscalation}
@@ -96,8 +111,10 @@ function App() {
                 setDaySalary = {setDaySalary}
             />
             <Sidebar
+                numberOfTaxiDriversCalls={numberOfTaxiDriversCalls}
                 numberOfEscalations={numberOfEscalations}
                 numberOfEscalationsGas={numberOfCallsGasEscalations}
+                numberOfCallsGas={numberOfCallsGas}
                 percentageEscalations={percentageEscalations}
                 numberOfCalls={numberOfCalls}
                 daySalary={daySalary}

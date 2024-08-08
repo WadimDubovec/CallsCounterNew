@@ -3,10 +3,12 @@ import MyButton from "../Button/MyButton";
 
 function Content({
                      numberOfCalls,
+                     numberOfTaxiDriversCalls,
                      numberOfEscalations,
                      numberOfCallsGas,
                      numberOfCallsGasEscalations,
                      setNumberOfCalls,
+                     setNumberOfTaxiDriversCalls,
                      setNumberOfEscalation,
                      setNumberOfCallsGas,
                      setNumberOfCallsGasEscalations,
@@ -23,23 +25,25 @@ function Content({
             <div className = "column" >
                 <MyButton
                     onClick = {() => {
+                        setNumberOfTaxiDriversCalls(prevCount => Math.max(prevCount - 1, 0))
                         setNumberOfCalls(prevCount => Math.max(prevCount - 1, 0))
                         setDaySalary(prevCount => Math.max(prevCount - 0.58, 0))
-                        if (numberOfCallsGasEscalations === 1 && numberOfCalls === 1)  {
-                            setNumberOfCallsGasEscalations(prevCount => Math.max(prevCount-1, 0))
-                        }
-                        if (numberOfEscalations === 1 && numberOfCalls === 1) {
-                            setNumberOfEscalation(prevCount => Math.max(prevCount-1, 0))
+
+                        if (numberOfTaxiDriversCalls === 0 && numberOfEscalations !== 0) {
+                            setNumberOfEscalation(prevCount => Math.max(prevCount - 1, 0))
+                        } else if (numberOfTaxiDriversCalls === 0 && numberOfCallsGasEscalations !== 0) {
+                            setNumberOfCallsGasEscalations(prevCount => Math.max(prevCount - 1, 0))
                         }
                     }}
 
                     className = "btn-minus"
-                    disabled = {numberOfCalls === 0}
+                    disabled = {numberOfTaxiDriversCalls === 0 && numberOfEscalations === 0 && numberOfCallsGasEscalations === 0}
                 >
                     -Минус
                 </MyButton >
                 <MyButton
                     onClick = {() => {
+                        setNumberOfTaxiDriversCalls(prevCount => Math.max(prevCount + 1, 0))
                         setNumberOfCalls(prevCount => prevCount + 1);
                         setRandomCountEmojis(prevCount => prevCount + Math.floor(Math.random() * 3) + 2);
                         setDaySalary(prevCount => Math.max(prevCount + 0.58, 0))
@@ -54,8 +58,12 @@ function Content({
             <div className = "column" >
                 <MyButton
                     onClick = {() => {
-                        setNumberOfEscalation(prevCount => prevCount - 1)
+                        setNumberOfCalls(prevCount => Math.max(prevCount-1, 0))
+                        setNumberOfEscalation(prevCount => Math.max(prevCount-1, 0))
                         setDaySalary(prevCount => prevCount - 0.20)
+                        if(numberOfEscalations === 1 && numberOfCalls === 1) {
+                            setNumberOfCalls(prevCount => Math.max(prevCount-1, 0))
+                        }
                     }}
                     className = "btn-escalation"
                     disabled = {numberOfEscalations === 0}
@@ -134,6 +142,7 @@ function Content({
             <div className = "column" >
                 <MyButton
                     onClick = {() => {
+                        setNumberOfTaxiDriversCalls(0)
                         setNumberOfEscalation(0);
                         setNumberOfCalls(0);
                         setNumberOfCallsGas(0);

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Sidebar.css"
 
-function Sidebar({ numberOfEscalations, numberOfEscalationsGas, percentageEscalations, daySalary }) {
+function Sidebar({numberOfTaxiDriversCalls, numberOfEscalations, numberOfEscalationsGas, numberOfCallsGas, percentageEscalations, daySalary }) {
 
 
     return (
@@ -20,6 +20,16 @@ function Sidebar({ numberOfEscalations, numberOfEscalationsGas, percentageEscala
                 <h3 >Процент всех эскалаций от общего количества звонков</h3 >
                 <p >{percentageEscalations.toFixed(2)}%</p >
             </div >
+
+            <div>
+                <h3>Количество обычных звонков таксистов</h3>
+                <p>{numberOfTaxiDriversCalls}</p>
+            </div>
+
+            <div>
+                <h3>Количество звонков по заправкам </h3>
+                <p>{numberOfCallsGas}</p>
+            </div>
 
             <div >
                 <h3 >ЗП:</h3 >

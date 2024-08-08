@@ -28,6 +28,9 @@ function Content({
                         if (numberOfCallsGasEscalations === 1 && numberOfCalls === 1)  {
                             setNumberOfCallsGasEscalations(prevCount => Math.max(prevCount-1, 0))
                         }
+                        if (numberOfEscalations === 1 && numberOfCalls === 1) {
+                            setNumberOfEscalation(prevCount => Math.max(prevCount-1, 0))
+                        }
                     }}
 
                     className = "btn-minus"
@@ -126,8 +129,7 @@ function Content({
                     Эскалация gas+
                 </MyButton >
             </div >
-
-
+            
             {/*zero*/}
             <div className = "column" >
                 <MyButton

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CallsCounterNew/static/css/main.14ebd562.css",
-    "main.js": "/CallsCounterNew/static/js/main.9e850f5c.js",
+    "main.css": "/CallsCounterNew/static/css/main.5df390d5.css",
+    "main.js": "/CallsCounterNew/static/js/main.40716864.js",
     "static/media/Octopus.svg": "/CallsCounterNew/static/media/Octopus.1dc63a9301d76c4e13c2.svg",
     "static/media/Heart On Fire.svg": "/CallsCounterNew/static/media/Heart On Fire.a59298c4041ad750d409.svg",
     "static/media/Growing Heart.svg": "/CallsCounterNew/static/media/Growing Heart.f839fd49d7bf7ec3ab6e.svg",
@@ -24,11 +24,11 @@
     "static/media/Brown Heart.svg": "/CallsCounterNew/static/media/Brown Heart.4ec66f42d68d3ba36e8d.svg",
     "static/media/White Heart.svg": "/CallsCounterNew/static/media/White Heart.5f04952ecf10848bd84e.svg",
     "index.html": "/CallsCounterNew/index.html",
-    "main.14ebd562.css.map": "/CallsCounterNew/static/css/main.14ebd562.css.map",
-    "main.9e850f5c.js.map": "/CallsCounterNew/static/js/main.9e850f5c.js.map"
+    "main.5df390d5.css.map": "/CallsCounterNew/static/css/main.5df390d5.css.map",
+    "main.40716864.js.map": "/CallsCounterNew/static/js/main.40716864.js.map"
   },
   "entrypoints": [
-    "static/css/main.14ebd562.css",
-    "static/js/main.9e850f5c.js"
+    "static/css/main.5df390d5.css",
+    "static/js/main.40716864.js"
   ]
 }

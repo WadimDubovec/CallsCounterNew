@@ -1,53 +1,47 @@
 import React, { useEffect, useState } from "react";
 import "./FallingCat.css";
-import {logDOM} from "@testing-library/react";
+
+// Импорт всех .svg файлов из папки assets/svgs
+const importAll = (r) => r.keys().map(r);
+const svgs = importAll(require.context('../../img/SVG', false, /\.svg$/));
 
 function FallingCat({ id }) {
     const [top, setTop] = useState(-100);
     const [left, setLeft] = useState(Math.random() * window.innerWidth);
-    const [emoji] = useState(getRandomEmoji());
-    const [shouldBeRemoved, setShouldBeRemoved] = useState(false); // Состояние для отслеживания необходимости удаления смайлика
-    const [fallingInterval, setFallingInterval] = useState(null); // Объявляем переменную fallingInterval
-
+    const [randomSvg] = useState(getRandomSvg());
+    const [shouldBeRemoved, setShouldBeRemoved] = useState(false);
+    const [fallingInterval, setFallingInterval] = useState(null);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTop(prevTop => prevTop + 1); // Уменьшаем шаг движения котика вниз
-        }, 10); // Уменьшаем интервал для более плавного движения
+            setTop(prevTop => prevTop + 1);
+        }, 10);
 
-        // Устанавливаем таймер для удаления смайлика через 13 секунд
         const removeTimer = setTimeout(() => {
             setShouldBeRemoved(true);
-            console.log("Пропал")
+            console.log("Пропал");
         }, 13000);
 
-        setFallingInterval(interval); // Сохраняем интервал в переменной
+        setFallingInterval(interval);
 
         return () => {
             clearInterval(interval);
-            clearTimeout(removeTimer); // Очищаем таймер при размонтировании компонента
+            clearTimeout(removeTimer);
         };
     }, []);
-    // useEffect(() => {
-    //     // Если shouldBeRemoved становится true, удаляем смайлик
-    //     if (shouldBeRemoved) {
-    //         clearInterval(fallingInterval);
-    //     }
-    // }, [shouldBeRemoved, fallingInterval]);
 
-    function getRandomEmoji() {
-        let emojis = ["🐱", "😺", "😸", "😼", "😽", "🙀", "😿", "😾","🐈", "🐈‍⬛", "😍","🥰","😘", "💋","😻","🩷","❤️","🧡","💛","💜","💙","🤍","🤎","🩶","🩵","💚","🖤", "❤️‍","❣️","💗","💓","💝","💘","💞","💕","💖"];
-        const randomIndex = Math.floor(Math.random() * emojis.length);
-        return emojis[randomIndex];
+    function getRandomSvg() {
+        const randomIndex = Math.floor(Math.random() * svgs.length);
+        return svgs[randomIndex];
     }
 
     if (shouldBeRemoved) {
-        return null; // Возвращаем null, чтобы смайлик не отображался
+        return null;
     }
 
     return (
         <div className="FallingCat" style={{ top, left }}>
-            {emoji}
+            <img src={randomSvg} alt="Falling Cat" />
         </div>
     );
 }

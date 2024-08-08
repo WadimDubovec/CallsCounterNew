@@ -1,4 +1,8 @@
 .FallingCat {
     position: absolute;
-    font-size: 56px;
+}
+
+.FallingCat img {
+    width: 30px;  /* Задайте желаемую ширину */
+    user-select: none; /* Запрещаем выделение изображения */
 }

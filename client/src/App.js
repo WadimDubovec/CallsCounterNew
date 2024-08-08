@@ -15,7 +15,6 @@ function App() {
             return 0;
         }
     });
-    
     const [numberOfEscalations, setNumberOfEscalation] = useState(() => {
         try {
             const savedEscalations = localStorage.getItem('numberOfEscalations');
@@ -26,7 +25,6 @@ function App() {
             return 0;
         }
     });
-    
     const [numberOfCallsGas, setNumberOfCallsGas] = useState(() => {
         try {
             const savedCallsGas = localStorage.getItem('numberOfCallsGas');
@@ -37,7 +35,6 @@ function App() {
             return 0;
         }
     })
-
     const [numberOfCallsGasEscalations, setNumberOfCallsGasEscalations] = useState(() => {
         try {
             const savedGasEscalations = localStorage.getItem('numberOfCallsGasEscalations');
@@ -78,7 +75,7 @@ function App() {
             console.error('Error saving numberOfCalls, numberOfEscalations, numberOfCallsGas, numberOfCallsGasEscalations or daySalary to localStorage:', error);
         }
     }, [numberOfCalls, numberOfEscalations, numberOfCallsGas, numberOfCallsGasEscalations, daySalary]);
-    const percentageEscalations = numberOfCalls !== 0 ? (numberOfEscalations / numberOfCalls) * 100 : 0;
+    const percentageEscalations = numberOfCalls !== 0 ? ((numberOfEscalations+numberOfCallsGasEscalations) / numberOfCalls) * 100 : 0;
 
     return (
         <div className="App">

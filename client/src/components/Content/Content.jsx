@@ -19,6 +19,7 @@ function Content({
             <h1 >{numberOfCalls}</h1 >
 
 
+            {/*minus and plus*/}
             <div className = "column" >
                 <MyButton
                     onClick = {() => {
@@ -41,6 +42,8 @@ function Content({
                     Плюс +
                 </MyButton >
             </div >
+
+            {/*escalation*/}
             <div className = "column" >
                 <MyButton
                     onClick = {() => {
@@ -64,6 +67,8 @@ function Content({
                     Эскалация+
                 </MyButton >
             </div >
+
+            
             <div className = "column" >
                 <MyButton
                     onClick = {() => {
@@ -95,7 +100,6 @@ function Content({
             <div className = "column" >
                 <MyButton
                     onClick = {() => {
-                        setNumberOfCalls(prevCount => Math.max(prevCount - 1, 0));
                         setNumberOfCallsGasEscalations(prevCount => Math.max(prevCount - 1, 0));
                         setDaySalary(prevCount => Math.max(prevCount - 0.26, 0));
                     }}
@@ -106,8 +110,8 @@ function Content({
                 </MyButton >
                 <MyButton
                     onClick = {() => {
-                        setNumberOfCalls(prevCount => prevCount + 1);
-                        setNumberOfCallsGas(prevCount => prevCount + 1);
+                        setNumberOfCalls(prevCount => Math.max(prevCount + 1, 0));
+                        setNumberOfCallsGas(prevCount => Math.max(prevCount + 1, 0));
                         setNumberOfCallsGasEscalations(prevCount => Math.max(prevCount + 1, 0));
                         setRandomCountEmojis(prevCount => prevCount + Math.floor(Math.random() * 3) + 2);
                         setDaySalary(prevCount => Math.max(prevCount + 0.26, 0));

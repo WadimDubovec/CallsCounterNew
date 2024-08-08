@@ -100,6 +100,7 @@ function Content({
             <div className = "column" >
                 <MyButton
                     onClick = {() => {
+                        setNumberOfCalls(prevCount => Math.max(prevCount-1, 0));
                         setNumberOfCallsGasEscalations(prevCount => Math.max(prevCount - 1, 0));
                         setDaySalary(prevCount => Math.max(prevCount - 0.26, 0));
                     }}

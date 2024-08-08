@@ -85,7 +85,7 @@ body {
 .btn-minus:active, .btn-plus:active, .btn-zero:active, .btn-escalation:active, .btn-gas:active, .btn-gas-escalation:active {
     transform: scale(0.95); /* Уменьшение размера при нажатии */
 }
-.btn-minus:disabled, .btn-escalation:disabled, .btn-gas:disabled, .btn-gas-escalation {
+.btn-minus:disabled, .btn-escalation:disabled, .btn-gas:disabled, .btn-gas-escalation:disabled {
     background-color: #ccc;
     color: #bdbdbd;
     cursor: not-allowed;
